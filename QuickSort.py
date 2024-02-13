@@ -1,3 +1,6 @@
+import random
+
+
 def qsort(arr, left, right):
     if left < right:
         p = get_pivot(arr, left, right)
@@ -8,6 +11,8 @@ def qsort(arr, left, right):
 def get_pivot(arr, left, right):
     i = left
     j = right - 1
+    p = random.randint(left, right)
+    arr[p], arr[right] = arr[right], arr[p]
     pivot = arr[right]
     while i < j:
         while i < right and arr[i] < pivot:
